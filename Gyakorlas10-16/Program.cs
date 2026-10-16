@@ -43,13 +43,15 @@
         {
             Console.Write("Kérek egy számot: ");
             int szam = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine($"A megadott helyen található szám: {tomb[szam-1]}");
+            Console.WriteLine($"A megadott helyen található szám: {tomb[szam - 1]}");
         }
 
         static void F14()
         {
             int a;
             int b;
+            string muvelet;
+            int ertek;
             Console.WriteLine("Adja meg a tömb nagyságát: ");
             int N = Convert.ToInt32(Console.ReadLine());
             int[] tomb2 = new int[N];
@@ -76,21 +78,60 @@
                 Console.WriteLine(tomb2[i] + " ");
             }
 
+            do
+            {
+                Console.WriteLine("Mit szeretne csinálni a tömb elemeivel?\na) Növelni\nb) Csökkenteni\nc)Szorozni\nd)Kilépni");
+                muvelet = Console.ReadLine();
+                Console.WriteLine("Kérem adja meg a műveleti mértéket:");
+                ertek = Convert.ToInt32(Console.ReadLine());
+                if (muvelet == "a")
+                {
+                    for (int i = 0; i < N; i++)
+                    {
+                        tomb2[i] += ertek;
+                    }
+                }
+                else if (muvelet == "b")
+                {
+                    for (int i = 0; i < N; i++)
+                    {
+                        tomb2[i] -= ertek;
+                    }
+                }
+                else if (muvelet == "c")
+                {
+                    for (int i = 0; i < N; i++)
+                    {
+                        tomb2[i] *= ertek;
+                    }
+                }
+                else if (muvelet == "d")
+                {
+                    Console.WriteLine("Kilépés...");
+                }
+                else
+                {
+                    Console.WriteLine("Hibás művelet!");
+                }
 
-
-
-
+                for (int i = 0; i < N; i++)
+                {
+                    Console.Write(tomb2[i] + " ");
+                }
+                Console.WriteLine();
+            }
+            while (muvelet != "d");
 
         }
 
-        static void Main(string[] args)
-        {
-            //Feltolt();
-            //Kiir();
-            //KiirVissza();
-            //MasodikElemek();
-            //MegadottSzam();
-            F14();
+            static void Main(string[] args)
+            {
+                //Feltolt();
+                //Kiir();
+                //KiirVissza();
+                //MasodikElemek();
+                //MegadottSzam();
+                F14();
+            }
         }
     }
-}
