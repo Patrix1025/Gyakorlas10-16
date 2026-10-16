@@ -2,7 +2,7 @@
 {
     internal class Program
     {
-        static int[] tomb = new int[10];
+        static int[] tomb = new int[5];
         static Random r = new Random();
         static void Feltolt()
         {
@@ -36,7 +36,16 @@
             {
                 Console.Write(tomb[i] + " ");
             }
+            Console.WriteLine();
         }
+
+        static void MegadottSzam()
+        {
+            Console.Write("Kérek egy számot: ");
+            int szam = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"A megadott helyen található szám: {tomb[szam-1]}");
+        }
+
 
 
         static void Main(string[] args)
@@ -45,6 +54,7 @@
             Kiir();
             KiirVissza();
             MasodikElemek();
+            MegadottSzam();
         }
     }
 }
