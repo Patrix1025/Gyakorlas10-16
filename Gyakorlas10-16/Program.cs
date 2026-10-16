@@ -27,9 +27,16 @@
             {
                 Console.Write(tomb[i] + " ");
             }
+            Console.WriteLine();
         }
 
-
+        static void MasodikElemek()
+        {
+            for (int i = 1; i < tomb.Length; i += 2)
+            {
+                Console.Write(tomb[i] + " ");
+            }
+        }
 
 
         static void Main(string[] args)
@@ -37,6 +44,7 @@
             Feltolt();
             Kiir();
             KiirVissza();
+            MasodikElemek();
         }
     }
 }
