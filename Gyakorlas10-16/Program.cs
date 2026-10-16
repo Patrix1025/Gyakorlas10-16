@@ -46,15 +46,51 @@
             Console.WriteLine($"A megadott helyen található szám: {tomb[szam-1]}");
         }
 
+        static void F14()
+        {
+            int a;
+            int b;
+            Console.WriteLine("Adja meg a tömb nagyságát: ");
+            int N = Convert.ToInt32(Console.ReadLine());
+            int[] tomb2 = new int[N];
+            Console.WriteLine("Adja meg az intervallum első értékét: ");
+            do
+            {
+                a = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Adja meg az intervallum második értékét: ");
+                b = Convert.ToInt32(Console.ReadLine());
+                if (a >= b)
+                {
+                    Console.WriteLine("Hibás intervallum!");
+                }
+            }
+            while (a >= b);
 
+            for (int i = 0; i < N; i++)
+            {
+                tomb2[i] = r.Next(a, b + 1);
+            }
+
+            for (int i = 0; i < N; i++)
+            {
+                Console.WriteLine(tomb2[i] + " ");
+            }
+
+
+
+
+
+
+        }
 
         static void Main(string[] args)
         {
-            Feltolt();
-            Kiir();
-            KiirVissza();
-            MasodikElemek();
-            MegadottSzam();
+            //Feltolt();
+            //Kiir();
+            //KiirVissza();
+            //MasodikElemek();
+            //MegadottSzam();
+            F14();
         }
     }
 }
